@@ -1,5 +1,12 @@
 <template>
 	<view>
+		<!-- 搜索组件的吸顶效果设置 -->
+		<view class="search-box">
+			<!-- 自定义样式，背景颜色和圆角尺寸 -->
+			<my-search :bgColor="'pink'" :borderRadius="'10'" @myclick="gotosearch"></my-search>
+		</view>
+
+		
 		<!-- 轮播图 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
 			<swiper-item v-for="(item,i) in swiperList" :key="i" class="swi">
@@ -79,7 +86,10 @@
 				// 	}
 				// ]
 				navList:[],
-				floorList:[]
+				floorList:[],
+				
+				
+
 			};
 		},
 		onLoad() {
@@ -122,11 +132,22 @@
 				 })
 			     this.floorList = res.message
 			   },
+			   gotosearch(){
+				   uni.navigateTo({
+				   	url:"/subpkg/search/search"
+				   })
+				   
+			   }
 		}
 	}
 </script>
 
 <style lang="scss">
+	.search-box{
+		position: sticky;
+		top: 0;
+		z-index: 999;
+	}
 	.swi {
 		width: 100%;
 		height: 300px;
