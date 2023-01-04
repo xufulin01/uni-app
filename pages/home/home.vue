@@ -100,12 +100,12 @@
 		methods: {
 			async getSwiperList() {
 				const res = await uni.$http.get("/api/public/v1/home/swoperdata")
-				console.log(res)
+				// console.log(res)
 				if(res.data.meta.status!==200) return uni.$showMsg()
 			},
 			async getNavList() {
 			      const { data: res } = await uni.$http.get('/api/public/v1/home/catitems')
-				  console.log(res)
+				  // console.log(res)
 			      if (res.meta.status !== 200) return uni.$showMsg()
 			      this.navList = res.message
 			    
@@ -113,7 +113,7 @@
 			 
 			  
 			navClickHandel(val){
-				console.log(val)
+				// console.log(val)
 				if(val.name==="分类"){
 					uni.switchTab({
 						url:"/pages/cate/cate"
@@ -122,7 +122,7 @@
 			},
 			async getFloorList() {
 			     const { data: res } = await uni.$http.get('/api/public/v1/home/floordata')
-				 console.log(res)
+				 // console.log(res)
 			     if (res.meta.status !== 200) return uni.$showMsg()
 				 // 对数据进行处理
 				 res.message.forEach(floor=>{

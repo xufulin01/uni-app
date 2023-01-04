@@ -60,7 +60,7 @@
 				if (res.meta.status !== 200) return uni.$showMsg()
 
 				this.cateList = res.message
-				console.log(res.message[0].children)
+				// console.log(res.message[0].children)
 				this.cateLable2 = res.message[0].children
 			},
 			handleItemClick(i) {
@@ -79,7 +79,7 @@
 				uni.navigateTo({
 					url:"/subpkg/search/search"
 				})
-				console.log(666)
+				// console.log(666)
 			}
 		}
 	}
