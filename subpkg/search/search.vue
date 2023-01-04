@@ -3,7 +3,10 @@
 	<view>
 		<!-- 搜索框 -->
 		<view class="searchbar">
-			<uni-search-bar @confirm="search" @input="input" :value="inputValue"placeholder="请输入搜索内容" radius="100" cancelButton="none" :focus="true"></uni-search-bar>
+			<!-- 点击历史记录回填重新搜索 -->
+			<!-- <uni-search-bar @confirm="search" @input="input" :value="inputValue"placeholder="请输入搜索内容" radius="100" cancelButton="none" :focus="true"></uni-search-bar> -->
+			<uni-search-bar @confirm="search" @input="input" placeholder="请输入搜索内容" radius="100" cancelButton="none" :focus="true"></uni-search-bar>
+
 		</view>
 		<!-- 搜索结果列表 -->
 		<view class="search-list" v-if="searchList.length!==0">
@@ -93,9 +96,16 @@
 				this.historyList=[]
 				uni.setStorageSync("kw",JSON.stringify("[]"))
 			},
+			// 点击历史记录回填重新搜索
+			// nextSearch(v){
+			// 	this.inputValue=v
+			// 	this.getSearchList()
+			// }
+			// 点击历史记录跳转到商品列表页面
 			nextSearch(v){
-				this.inputValue=v
-				this.getSearchList()
+				uni.navigateTo({
+					url:"/subpkg/goods_list/goods_list?query="+v
+				})
 			}
 		},
 		computed:{
