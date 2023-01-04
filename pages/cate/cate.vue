@@ -17,7 +17,7 @@
 					<view class="scroll-right-item">
 						<view class="children-item" v-for="(temp,j) in item2.children" :key="j"
 							@click="gotoGoodsList(temp)">
-							<!-- 						<image src="https://img0.baidu.com/it/u=3820671488,609799335&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200" mode="widthFix"></image>
+							<!-- <image src="https://img0.baidu.com/it/u=3820671488,609799335&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200" mode="widthFix"></image>
  -->
 							<image :src="temp.cat_icon.replace('dev','web')" mode="widthFix"></image>
 							<view class="child-item-title">

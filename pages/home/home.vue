@@ -3,7 +3,8 @@
 		<!-- 搜索组件的吸顶效果设置 -->
 		<view class="search-box">
 			<!-- 自定义样式，背景颜色和圆角尺寸 -->
-			<my-search :bgColor="'pink'" :borderRadius="'10'" @myclick="gotosearch"></my-search>
+			<!-- <my-search :bgColor="'pink'" :borderRadius="'10'" @myclick="gotosearch"></my-search> -->
+			<my-search  @myclick="gotosearch"></my-search>
 		</view>
 
 		
