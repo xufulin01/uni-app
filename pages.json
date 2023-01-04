@@ -47,7 +47,9 @@
                     "style" :                                                                                    
                 {
                     "navigationBarTitleText": "商品列表页",
-                    "enablePullDownRefresh": false
+                    "enablePullDownRefresh":true,
+					"backgroundColor": "#7476f8",
+					"onReachBottomDistance": 150
                 }
                 
                 }

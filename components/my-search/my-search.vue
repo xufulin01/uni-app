@@ -32,7 +32,7 @@
 			searchHandlerClick(){
 				// 触发组件的自定义事件
 				this.$emit('myclick')
-				console.log('123')
+				// console.log('123')
 			}
 		}
 	}
